@@ -1,0 +1,12 @@
+{
+    "name": "react-ssr-demo",
+    "cwd": "./",
+    "script": "dist/app.js",
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "watch": false,
+    "instances": 2,
+    "exec_mode": "cluster",
+    "env": {
+        "NODE_ENV": "production"
+    }
+}

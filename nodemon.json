@@ -1,0 +1,14 @@
+{
+    "verbose": false,
+    "ignore": [
+        "node_modules/",
+        "logs/"
+    ],
+    "watch": [
+        "dist/"
+    ],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "js,ts,json"
+}

@@ -3,8 +3,6 @@
         "allowSyntheticDefaultImports": true,
         "target": "es6", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
         "lib": ["es6", "dom"], // 指定要包含在编译中的库文件
-        "module": "commonjs", // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
-        // "types": ["reflect-metadata"], // 需要包含的类型声明文件名列表
         "sourceMap": true,
         "allowJs": true,
         "jsx": "react",
@@ -22,7 +20,7 @@
     ],
     "exclude": [
         "node_modules",
-        "build",
+        "config",
         "config",
         "public",
         "mock",
