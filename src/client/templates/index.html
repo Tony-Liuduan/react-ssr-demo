@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>react-ssr-demo</title>
-</head>
-<body>
-    <div id="root"></div>
-</body>
-</html>
+{% extends './layout.html' %}
+
+
+{% block title %}{{title}}{% endblock %}
+
+
+{% block head %}
+{% endblock %}
+
+
+{% block content %}{% autoescape false %}{{markup}}{% endautoescape %}{% endblock %}
+
+
+{% block scripts %}
+
+{% if reduxStore %}
+<script type="text/javascript">window.__SSR_REDUX_STORE__ = {{ reduxStore }};</script>
+{% endif %}
+
+{% for src in scripts %}
+<script type="text/javascript" src="{{src}}"></script>
+{% endfor %}
+
+{% endblock %}

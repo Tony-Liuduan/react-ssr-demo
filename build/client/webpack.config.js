@@ -2,12 +2,14 @@
  * @fileoverview client webpack config
  * @author liuduan
  * @Date 2020-06-24 20:44:42
- * @LastEditTime 2020-06-26 11:52:06
+ * @LastEditTime 2020-06-26 19:12:37
  */
 
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { minify } = require('html-minifier'); // html压缩
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 
 const cwdPath = process.cwd();
@@ -50,11 +52,27 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        
-        new HtmlWebpackPlugin({
-            filename: '../public/index.html',
-            template: 'src/client/templates/index.html',
-            chunks: ['vendor', 'commons', 'index'],
+
+        new ManifestPlugin(),
+
+        // 把templates复制到dist文件，这些是不需要打包的html模板文件
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: './src/client/templates',
+                    to: '../templates',
+                    transform(content) {
+                        // 压缩html
+                        const result = minify(content.toString('utf-8'), {
+                            collapseWhitespace: true, // 空格换行去掉
+                            removeAttributeQuotes: true, // 属性引号去掉
+                            removeEmptyAttributes: true, // 空属性去掉
+                            removeComments: true, // 注释去掉
+                        });
+                        return result;
+                    }
+                },
+            ],
         }),
     ],
 }

@@ -2,7 +2,7 @@
  * @fileoverview 
  * @author liuduan
  * @Date 2020-06-26 10:25:09
- * @LastEditTime 2020-06-26 12:12:46
+ * @LastEditTime 2020-06-26 14:59:28
  */
 const path = require('path');
 const argv = require('yargs-parser')(process.argv.slice(2));
@@ -47,6 +47,7 @@ const webpackBaseConfig = {
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
         alias: {
             '@': path.resolve('src'),
+            '@dist': path.resolve('dist'),
         },
     },
     plugins: [

@@ -3,6 +3,7 @@
         "allowSyntheticDefaultImports": true,
         "target": "es6", // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES6'/'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
         "lib": ["es6", "dom"], // 指定要包含在编译中的库文件
+        "module": "CommonJS",
         "sourceMap": true,
         "allowJs": true,
         "jsx": "react",
@@ -12,7 +13,8 @@
         "experimentalDecorators": true, // 启用装饰器
         "emitDecoratorMetadata": true, // 为装饰器提供元数据的支持
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "@dist/*": ["./dist/*"]
         }
     },
     "include": [

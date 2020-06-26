@@ -2,7 +2,7 @@
  * @fileoverview 
  * @author liuduan
  * @Date 2020-06-25 11:21:44
- * @LastEditTime 2020-06-26 14:28:57
+ * @LastEditTime 2020-06-26 17:06:53
  */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -28,7 +28,7 @@ function About(props) {
     return (
         <div>
             <h2>About</h2>
-            {props.aboutData}
+            <p>{props.aboutData}</p>
         </div>
     );
 }
@@ -44,8 +44,6 @@ About.loadData = (store) => {
     return fetch('http://localhost:6027/api/about')
         .then(res => res.json())
         .then(res => {
-            console.log('-----');
-            console.log(res.data);
             store.dispatch(updateAboutData(res.data));
             return res;
         })

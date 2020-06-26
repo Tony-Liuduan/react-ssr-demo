@@ -1,0 +1,7 @@
+{
+  "index.js": "/scripts/index.bundle.js",
+  "runtime.js": "/scripts/runtime.bundle.js",
+  "vendor.js": "/scripts/vendor.bundle.js",
+  "../templates/index.html": "/../templates/index.html",
+  "../templates/layout.html": "/../templates/layout.html"
+}

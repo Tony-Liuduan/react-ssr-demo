@@ -2,7 +2,7 @@
  * @fileoverview client production webpack config
  * @author liuduan
  * @Date 2020-06-26 10:31:52
- * @LastEditTime 2020-06-26 11:21:49
+ * @LastEditTime 2020-06-26 14:48:16
  */
 const TerserPlugin = require('terser-webpack-plugin'); // js 压缩
 
