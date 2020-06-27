@@ -2,7 +2,7 @@
  * @fileoverview node server entry
  * @author liuduan
  * @Date 2020-06-26 11:57:12
- * @LastEditTime 2020-06-26 19:15:22
+ * @LastEditTime 2020-06-27 10:17:42
  */
 import path from 'path';
 import fs from 'fs';
@@ -16,6 +16,7 @@ import swigRender from 'koa-swig';
 import co from 'co';
 import bigpipe from '@/server/utils/bigpipe';
 
+import 'isomorphic-unfetch';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';

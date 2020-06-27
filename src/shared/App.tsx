@@ -2,9 +2,8 @@
  * @fileoverview App Component
  * @author liuduan
  * @Date 2020-06-26 11:55:59
- * @LastEditTime 2020-06-26 14:16:56
+ * @LastEditTime 2020-06-27 10:17:31
  */
-import 'isomorphic-unfetch';
 import React from 'react';
 import {
     Link,
