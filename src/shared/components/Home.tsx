@@ -2,10 +2,11 @@
  * @fileoverview 
  * @author liuduan
  * @Date 2020-06-25 11:21:44
- * @LastEditTime 2020-06-26 23:07:22
+ * @LastEditTime 2020-06-27 22:08:30
  */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CheckboxGroup from './CheckboxGroup';
+import { sendRequest } from '../utils/request';
 
 const list = [
     {
@@ -29,6 +30,16 @@ function Home() {
     function handleChange(newSelected) {
         setSelected(newSelected);
     }
+
+    useEffect(() => {
+        let urls = Array.from({ length: 10 }, (v, k) => `http://localhost:6027/api/${k}`);
+        let max = 3;
+        let callback = (res) => {
+            console.log('run callback', res);
+        };
+        //执行
+        sendRequest(urls, max, callback);
+    }, [])
 
     return (
         <div>

@@ -2,7 +2,7 @@
  * @fileoverview node server entry
  * @author liuduan
  * @Date 2020-06-26 11:57:12
- * @LastEditTime 2020-06-27 10:17:42
+ * @LastEditTime 2020-06-27 22:09:10
  */
 import path from 'path';
 import fs from 'fs';
@@ -152,6 +152,7 @@ router
         // 注意：这里需要先处理完store在markup
         const markup = await outputMarkup(ctx, store);
 
+        // @ts-ignore
         const html = await ctx.render(pagename, {
             title: 'react-ssr-demo',
             markup,
